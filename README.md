@@ -8,3 +8,8 @@ Hey,
 This is Moksha Shah from DJSCE, Mumbai,
 Phone No: 9930245951
 LinkedIn: https://www.linkedin.com/in/moksha-shah-ba301b189/
+
+Hey,
+This is Nipun Gupta from MANIT,Bhopal,
+Phone No: 9694682562
+LinkedIn: www.linkedin.com/in/nipungupta10
