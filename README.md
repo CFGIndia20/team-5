@@ -1,3 +1,7 @@
+Join the whatsapp group using this link
+-https://chat.whatsapp.com/KmGmABMgPdbLXYYnQsvuE0
+
+
 Hi Guys,
 This is Neelam Somai from VESIT, Mumbai.
 Let's connect,
@@ -13,3 +17,4 @@ Hey,
 This is Nipun Gupta from MANIT,Bhopal,
 Phone No: 9694682562
 LinkedIn: www.linkedin.com/in/nipungupta10
+
