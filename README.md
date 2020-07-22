@@ -18,3 +18,7 @@ This is Nipun Gupta from MANIT,Bhopal,
 Phone No: 9694682562
 LinkedIn: www.linkedin.com/in/nipungupta10
 
+Hi Guys,
+This is Arushi Shah from VIT University, Vellore
+Phone No: 9674940210
+LinkedIn: https://www.linkedin.com/in/arushishah-/
