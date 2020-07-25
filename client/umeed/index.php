@@ -1,3 +1,13 @@
+<?php
+
+//session_unset();
+session_start();
+
+require "dbconn.php";
+
+?>
+
+
 <!DOCTYPE html>
 <html lan = "en">
 <head>
@@ -18,11 +28,11 @@
         </header>
     
        
-        <form class ="form" action="login.php" method="POST">
+        <form class ="form" method="POST">
             <h3 id="title">Log in</h3>
             <div class="form-group">
               <label for="exampleInputEmail1">Username</label>
-              <input name="name" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Username">
+              <input name="name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Username">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Password</label>
@@ -30,13 +40,13 @@
             </div>
             <div class ="form-group">
                 <label for ="dropdown">Log in as</label>
-            <select class="form-control">
+            <select name="type" class="form-control">
                 <option>User</option>
                 <option>Manager</option>
                 <option>Admin</option>
               </select>
               </div>
-            <button type="button" class="btn btn-light" id="btn">Submit</button>
+            <button name="submit" type="submit" class="btn btn-light" id="btn">Submit</button>
           </form>
           
           
@@ -44,3 +54,37 @@
 
     </body>
     </html>
+
+
+
+
+<?php
+
+if (isset($_POST["submit"])){
+$fullname = $_POST["name"];
+$password = $_POST["pass"];
+$type = $_POST["type"];
+
+echo $type;
+
+if ($type == "User") {
+    $mysqlquery = "select uid from user where full_name = '$fullname' and password = '$password' and type = '$type'";
+
+    $result = $conn->query($mysqlquery);
+
+    if ($result === false) {
+        die(mysqli_error($conn));
+    }
+
+    if ($result->num_rows === 1) {
+        $row = $result->fetch_assoc();
+        $_SESSION["uid"] = $row["uid"];
+        echo "Successful";
+    } else {
+        //user does not exist
+        session_unset();
+    }
+}
+$conn->close();
+}
+?>
