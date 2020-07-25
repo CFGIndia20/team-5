@@ -29,15 +29,16 @@ require "dbconn.php";
         <form class ="form" method="POST">
             <h3 id="title">Sign Up</h3>
             <div class="form-group" >
-              <label for="exampleInputEmail1">Full Name</label><input type="Name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Username">
+              <label for="exampleInputEmail1">Full Name</label>
+              <input name="name"type="Name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Username">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password">
+              <input name="pass" type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password">
             </div>
             <div class="form-group">
               <label for="exampleInputRegion1">Region</label>
-              <select class="form-control">
+              <select name="region" class="form-control">
                 <option>Kolkata</option>
                 <option>Mumbai</option>
                 <option>Delhi</option>
@@ -45,7 +46,7 @@ require "dbconn.php";
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Mobile Number</label>
-              <input type="Number" class="form-control" id="exampleInputNumber1" placeholder="Enter Number">
+              <input name="pno" type="Number" class="form-control" id="exampleInputNumber1" placeholder="Enter Number">
             </div><br>
             <div>
             <button type="button" class="btn btn-light" id="btn">Submit</button></div>
@@ -61,15 +62,23 @@ require "dbconn.php";
 
 <?php
 
-$password = $_POST[""];
-$fullname = $_POST[""];
-$pno = $_POST[""];
-$region = $_POST[""];
+$password = $_POST["pass"];
+$fullname = $_POST["name"];
+$pno = $_POST["pno"];
+$region = $_POST["region"];
 
-$mysqlquery = "insert into user(fullname, password, pno, region) values ('{$fullname}', '{$password}', '{$pno}', '{$region}')";
+$mysqlquery = "insert into user(full_name, password, pno, region) values ('{$fullname}', '{$password}', '{$pno}', '{$region}')";
 
-if ($conn->query($mysqlquery) == TRUE) {
-    $_SESSION["uid"] = $uid;
+if ($conn->query($mysqlquery) == TRUE) {}
+    $query = "select uid from user where full_name = '$fullname' and password = '$password' and pno = '$pno' and region = '$region'";
+    $result = $conn->query($query);
+    if ($result === false) { die(mysqli_error($conn)); }
+    if($result->num_rows === 1){
+      $row = $result->fetch_assoc();
+      $_SESSION["uid"] = $row["uid"];
+    }
+    
+
 }
 
 $conn->close();
