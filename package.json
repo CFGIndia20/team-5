@@ -1,0 +1,24 @@
+{
+  "name": "team-5",
+  "version": "1.0.0",
+  "description": "Join the whatsapp group using this link\r -https://chat.whatsapp.com/KmGmABMgPdbLXYYnQsvuE0",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CFGIndia20/team-5.git"
+  },
+  "author": "neelam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CFGIndia20/team-5/issues"
+  },
+  "homepage": "https://github.com/CFGIndia20/team-5#readme",
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.12.9"
+  }
+}
