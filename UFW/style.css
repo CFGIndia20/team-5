@@ -16,12 +16,12 @@ body{
      height:15%;
  }
  .form-group{
-  align-content: center;
+  align-self:  center;
  }
  
  .form{
      background-color:#E6E6FA;
-     width: 30%;
+     width: 20%;
      height: 50%;
      border:#A01F62 5px solid;
      padding-top:3%;
