@@ -1,3 +1,26 @@
+<?php
+session_start();
+require('dbcon.php');
+$reg = "SELECT region from user where uid=2";
+$qry1 = mysqli_query($con,$reg);
+if($qry1 == false)
+{
+    echo 'failed';
+}
+$row = mysqli_num_rows($qry1);
+$data1 = mysqli_fetch_assoc($qry1);
+$region = $data1['region'];
+$qry = "SELECT `uid`, `full_name` FROM `user` WHERE region='$region'";
+$qry2 = mysqli_query($con,$qry);
+if($qry2 == false)
+{
+    echo 'failed';
+}
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lan = "en">
 <head>
@@ -41,27 +64,25 @@
                         <div class = "user">
                             <div class ="row">
                                 <div class ="col-sm-3">
-                                    <span id="details"><input type ="text" id="name" placeholder="Name"/></span>
+                                    <span id="details"><input type ="text" id="name" name="name" placeholder="Name"/></span>
                                 </div>
                                 <div class="col-sm-3">
-                                    <span id="details">Number of hours:20</span>
+                                    <span id="details" name="noh">Number of hours:20</span>
                                 </div>
                                 <div class ="col-sm-3">
-                                    <input type="text" placeholder="Work to do.."/>
+                                    <input type="text" placeholder="How many.."/ name="wtd">
                                 </div>
-                                <div class="dropdown">
-                                    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                      Actions
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                      <a class="dropdown-item" href="#">Lamp</a>
-                                      <a class="dropdown-item" href="#">Diya</a>
-                                      <a class="dropdown-item" href="#">Maat</a>
-                                    </div>
-                                  </div>
+                                <div class="form-group">
+                                <label for="exampleFormControlSelect2">Example multiple select</label>
+                                <select multiple class="form-control" id="exampleFormControlSelect2" name="product">
+                                  <option value="diya">Diya</option>
+                                  <option value="lamp">Lamp</option>
+                                  <option value="mate">Mate</option>
+                                </select>
+                              </div>
                             </div>
                         </div>
-                        <button type="button" class="btn btn-light" id="btn">Submit</button>
+                        <button type="submit" class="btn btn-light" id="btn" name="assign">Submit</button>
                     </div>
                   </div>
                 </div>
@@ -187,3 +208,24 @@
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </html>
+<?php
+if(mysqli_num_rows($qry2)>0)
+     {
+         $data= mysqli_fetch_assoc($qry2);
+}
+if(isset($_POST["assign"]))
+{
+    $name = $_POST["name"];
+    $hm = $_POST["wtd"];
+    $product = $_POST["product"];
+    
+    $qry = "UPDATE `production` SET `p_task`='$product',`assigned`='$hm' WHERE id= 1 ";
+    $run = mysqli_query($con,$qry);
+    if ($run == true)
+    {
+        ?>
+<script>alert('Assigned');</script>
+<?php
+    }   
+}
+?>
