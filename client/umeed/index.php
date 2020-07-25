@@ -67,7 +67,7 @@ $type = $_POST["type"];
 
 echo $type;
 
-if ($type == "User") {
+if ($type == "User" || $type == "Manager") {
     $mysqlquery = "select uid from user where full_name = '$fullname' and password = '$password' and type = '$type'";
 
     $result = $conn->query($mysqlquery);
@@ -82,8 +82,28 @@ if ($type == "User") {
         echo "Successful";
     } else {
         //user does not exist
+        echo "not exist";
         session_unset();
     }
+} else {
+    $query = "select id from admin where full_name = '$fullname' and password = '$password'";
+    
+    $result = $conn->query($query);
+
+    if ($result === false) {
+        die(mysqli_error($conn));
+    }
+
+    if ($result->num_rows === 1) {
+        $row = $result->fetch_assoc();
+        $_SESSION["id"] = $row["id"];
+        echo "Successful";
+    } else {
+        //user does not exist
+        echo "not exist";
+        session_unset();
+    }
+
 }
 $conn->close();
 }
