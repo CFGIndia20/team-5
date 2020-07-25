@@ -1,3 +1,11 @@
+<?php
+
+session_unset();
+session_start();
+
+require "dbconn.php";
+?>
+
 <!DOCTYPE html>
 <html lan = "en">
 <head>
@@ -18,7 +26,7 @@
         </header>
 
 
-        <form class ="form">
+        <form class ="form" method="POST">
             <h3 id="title">Sign Up</h3>
             <div class="form-group" >
               <label for="exampleInputEmail1">Full Name</label><input type="Name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Username">
@@ -48,3 +56,22 @@
 
     </body>
     </html>
+
+    
+
+<?php
+
+$password = $_POST[""];
+$fullname = $_POST[""];
+$pno = $_POST[""];
+$region = $_POST[""];
+
+$mysqlquery = "insert into user(fullname, password, pno, region) values ('{$fullname}', '{$password}', '{$pno}', '{$region}')";
+
+if ($conn->query($mysqlquery) == TRUE) {
+    $_SESSION["uid"] = $uid;
+}
+
+$conn->close();
+
+?>
