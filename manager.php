@@ -60,11 +60,21 @@ if($qry2 == false)
                   </div>
               
                   <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+
+
+<!-- assign section-->
+
+<?php
+                  if(mysqli_num_rows($qry2)>0)
+                  {
+                      $data= mysqli_fetch_assoc($qry2);
+                  ?>
                     <div class="card-body">
                         <div class = "user">
                             <div class ="row">
                                 <div class ="col-sm-3">
-                                    <span id="details"><input type ="text" id="name" name="name" placeholder="Name"/></span>
+                                  <span name="id"><?php echo  $data["uid"]; ?></span>
+                                    <span id="details"><?php echo  $data["full_name"]; ?></span>
                                 </div>
                                 <div class="col-sm-3">
                                     <span id="details" name="noh">Number of hours:20</span>
@@ -84,6 +94,11 @@ if($qry2 == false)
                         </div>
                         <button type="submit" class="btn btn-light" id="btn" name="assign">Submit</button>
                     </div>
+
+                    <?php
+                  }
+?>
+
                   </div>
                 </div>
                 <div class="card">
@@ -95,11 +110,14 @@ if($qry2 == false)
                     </h2>
                   </div>
                   <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                    <div class="card-body">
+                    
+                  
+                  
+                  <div class="card-body">
                                 <div class = "user">
                                     <div class ="row">
                                         <div class ="col sm-3">
-                                            <span id="details"><input type ="text" id="name" placeholder="Name"/></span>
+                                            <span id="details"><input type="text" id="name" placeholder="name"/></span>
                                         </div>
                                         <div class="col sm-3">
                                             <img alt="handicraft" src="./pics/han1.jpg" id="han"/>
@@ -166,6 +184,9 @@ if($qry2 == false)
                                 </div>
                                 
                   </div>
+
+
+
                 </div>
                 </div>
                 </div>
@@ -209,17 +230,15 @@ if($qry2 == false)
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </html>
 <?php
-if(mysqli_num_rows($qry2)>0)
-     {
-         $data= mysqli_fetch_assoc($qry2);
-}
+
+                }
 if(isset($_POST["assign"]))
 {
-    $name = $_POST["name"];
     $hm = $_POST["wtd"];
     $product = $_POST["product"];
+    $id = $_POST["id"];
     
-    $qry = "UPDATE `production` SET `p_task`='$product',`assigned`='$hm' WHERE id= 1 ";
+    $qry = "UPDATE `production` SET `p_task`='$product',`assigned`='$hm' WHERE id= '$id' ";
     $run = mysqli_query($con,$qry);
     if ($run == true)
     {
