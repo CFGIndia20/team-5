@@ -1,7 +1,6 @@
 <?php
 session_start();
-require('dbcon');
-
+require('dbcon.php');
 
 ?>
 
@@ -32,97 +31,42 @@ require('dbcon');
         </div>
       </nav>  
       
-    
-
-      <h1 id="title">Users</h1>
-      <div class="choose">
-        <div class="accordion" id="accordionExample">
-            <div class="card">
-              <div class="card-header" id="headingOne">
-                <h2 class="mb-0">
-                  <form>
-                  <button type="submit" name="w_comp" class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                     Weekly Compensation
-                  </button>
-                </form>
-                </h2>
-              </div>
-          
-              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-12 col-sm-6">
-                        <input type ="text" id="name" placeholder="Name"/>
-                    </div>
-                    <div class="col-12 col-sm-6">
-                        <input type ="text" id="name" placeholder=""/>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-header" id="headingTwo">
-                <h2 class="mb-0">
-                  <button class="btn btn-light collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                     Monthly Compensation
-                  </button>
-                </h2>
-              </div>
-              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-12 col-sm-6">
-                        <input type ="text" id="name" placeholder="Name"/>
-                    </div>
-                    <div class="col-12 col-sm-6">
-                        <input type ="text" id="name" placeholder=""/>
-                </div>
-                    </div>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-header" id="headingThree">
-                <h2 class="mb-0">
-                  <button class="btn btn-light collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Number of Sessions
-                  </button>
-                </h2>
-              </div>
-              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-12 col-sm-6">
-                        <input type ="text" id="name" placeholder="Name"/>
-                    </div>
-                    <div class="col-12 col-sm-6">
-                        <input type ="text" id="name" placeholder=""/>
-                </div>
-                    </div>
-                 </div>
-              </div>
-            </div>
-          </div>
-         </div>
-
+<form method="POST">
+<button type="submit" class="btn btn-primary" name="w_comp">View Weekly Compensation</button>
+<button type="submit" class="btn btn-secondary">View Sessions</button>
+<button type="submit" class="btn btn-success">View Monthly Comensation</button>    
+    </form>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
      
 </body>
-<script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
-    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </html>
 
-<?php
-if (isset(["w_comp"])) {
-  $query = "select full_name, w_comp from user where type = 'user' order by w_comp limit 10";
-    if ($con->query($query) == TRUE) {
-        $result = $con->query($query);
-        if ($result === false) { die(mysqli_error($con)); }
-        if($result->num_rows > 1){
-            $row = $result->fetch_assoc();
-            // add html
-        }
-    }
-}
-?>
