@@ -40,19 +40,32 @@ require "dbconn.php";
             </div>
             <div class ="form-group">
                 <label for ="dropdown">Log in as</label>
-            <select name="type" class="form-control">
-                <option>User</option>
-                <option>Manager</option>
-                <option>Admin</option>
+            <select name="type" class="form-control" id="list">
+            <option id="user" value="./User1.php">User</option>
+                <option id="manager" value ="./manager.php">Manager</option>
+                <option id="admin" value="./admin.php">Admin</option>
               </select>
               </div>
-            <button name="submit" type="submit" class="btn btn-light" id="btn">Submit</button>
+              <button  class="btn btn-light" id="btn" onclick="goToNewPage()">Submit</button>
+              <span><a href="./signin.php">Create an Account</a></span>
           </form>
           
           
 
 
     </body>
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+     function goToNewPage(){
+      var url = document.getElementById('list').value;
+         if(url != 'none') {
+            window.location = url;
+        }
+     }
+
+    </script>
     </html>
 
 
