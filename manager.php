@@ -72,6 +72,32 @@ if($qry2 == false)
                     <div class="card-body">
                         <div class = "user">
                             <div class ="row">
+<<<<<<< HEAD:manager.html
+                                <div class ="col-12 col-sm-3">
+                                    <span id="details"><input type ="text" id="name" placeholder="Name"/></span>
+                                </div>
+                                <div class="col-12 col-sm-3">
+                                    <span id="details">Number of hours:20</span>
+                                </div>
+                                <div class ="col-12 col-sm-3">
+                                    <input type="text" placeholder="Work to do.."/>
+                                </div>
+                                <div class="col-12 col-sm-3">
+                                <div class="dropdown">
+                                    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      Actions
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                      <a class="dropdown-item" href="#">Lamp</a>
+                                      <a class="dropdown-item" href="#">Diya</a>
+                                      <a class="dropdown-item" href="#">Maat</a>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                        </div>
+                        <button type="button" class="btn btn-light" id="btn">Submit</button>
+=======
                                 <div class ="col-sm-3">
                                   <span name="id"><?php echo  $data["uid"]; ?></span>
                                     <span id="details"><?php echo  $data["full_name"]; ?></span>
@@ -93,6 +119,7 @@ if($qry2 == false)
                             </div>
                         </div>
                         <button type="submit" class="btn btn-light" id="btn" name="assign">Submit</button>
+>>>>>>> 308727b851571dcb0b75181f6657535d803c8fa9:manager.php
                     </div>
 
                     <?php
@@ -116,73 +143,78 @@ if($qry2 == false)
                   <div class="card-body">
                                 <div class = "user">
                                     <div class ="row">
+<<<<<<< HEAD:manager.html
+                                        <div class ="col-12 col-sm-3">
+                                            <span id="details"><input type ="text" id="name" placeholder="Name"/></span>
+=======
                                         <div class ="col sm-3">
                                             <span id="details"><input type="text" id="name" placeholder="name"/></span>
+>>>>>>> 308727b851571dcb0b75181f6657535d803c8fa9:manager.php
                                         </div>
-                                        <div class="col sm-3">
+                                        <div class="col-12 col-sm-3">
                                             <img alt="handicraft" src="./pics/han1.jpg" id="han"/>
                                         </div>
-                                        <div class ="col sm-3">
+                                        <div class ="col-12 col-sm-3">
                                             <button type="button" class="btn btn-light" id="btn">YES</button>
                                             <button type="button" class="btn btn-light" id="btn">NO</button>
                                         </div>
-                                        <div class="col sm-3">
+                                        <div class="col-12 col-sm-3">
                                             <input type="text" placeholder="Enter Comment.." id="Comment"/>
                                         </div>
                                     </div>
                                 </div>
                                 <div class = "user">
                                     <div class ="row">
-                                        <div class ="col sm-3">
+                                        <div class ="col-12 col-sm-3">
                                             <span id="details"><input type ="text" id="name" placeholder="Name"/></span>
                                         </div>
-                                        <div class="col sm-3">
+                                        <div class="col-12 col-sm-3">
                                             <img alt="handicraft" src="./pics/han2.jpg" id="han"/>
                                         </div>
-                                        <div class ="col sm-3">
+                                        <div class ="col-12  col-sm-3">
                                             <button type="button" class="btn btn-light" id="btn">YES</button>
                                             <button type="button" class="btn btn-light" id="btn">NO</button>
                                         </div>
-                                        <div class="col sm-3">
+                                        <div class="col-12 col-sm-3">
                                             <input type="text" placeholder="Enter Comment.." id="Comment"/>
                                         </div>
                                     </div>
                                 </div>
                                 <div class = "user">
                                     <div class ="row">
-                                        <div class ="col sm-3">
+                                        <div class ="col-12 col-sm-3">
                                             <span id="details"><input type ="text" id="name" placeholder="Name"/></span>
                                         </div>
-                                        <div class="col sm-3">
+                                        <div class="col-12 col-sm-3">
                                             <img alt="handicraft" src="./pics/han3.jpg" id="han"/>
                                         </div>
-                                        <div class ="col sm-3">
+                                        <div class ="col-12 col-sm-3">
                                             <button type="button" class="btn btn-light" id="btn">YES</button>
                                             <button type="button" class="btn btn-light" id="btn">NO</button>
                                         </div>
-                                        <div class="col sm-3">
+                                        <div class="col-12 col-sm-3">
                                             <input type="text" placeholder="Enter Comment.." id="Comment"/>
                                         </div>
                                     </div>
                                 </div>
                                 <div class = "user">
                                     <div class ="row">
-                                        <div class ="col sm-3">
+                                        <div class ="col-12 col-sm-3">
                                             <span id="details"><input type ="text" id="name" placeholder="Name"/></span>
                                         </div>
-                                        <div class="col sm-3">
+                                        <div class="col-12 col-sm-3">
                                             <img alt="handicraft" src="./pics/han4.jpg" id="han"/>
                                         </div>
-                                        <div class ="col sm-3">
+                                        <div class ="col-12 col-sm-3">
                                             <button type="button" class="btn btn-light" id="btn">YES</button>
                                             <button type="button" class="btn btn-light" id="btn">NO</button>
                                         </div>
-                                        <div class="col sm-3">
+                                        <div class="col-12 col-sm-3">
                                             <input type="text" placeholder="Enter Comment.." id="Comment"/>
                                         </div>
                                     </div>
                                 </div>
-                                
+                                <button type="button" class="btn btn-light" id="btn">Submit</button>    
                   </div>
 
 
@@ -202,17 +234,21 @@ if($qry2 == false)
                   <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                     <div class="card-body">
                       <div class="row">
-                        <div class="col-3">
+                        <div class="col-12 col-sm-3">
                           <input type="text" placeholder="Username.." id="Username"/>
                         </div>
-                        <div class="col-3">
+                        <div class="col-12 col-sm-3">
                           <input type="text" placeholder="Sessions.." id="Sessions"/>
                         </div>
-                        <div class="col-3">
+                        <div class="col-12 col-sm-3">
+                          <form>
                           <input type="text" placeholder="Productive hours.." id="Productive"/>
+                          </form>
                         </div>
-                        <div class="col-3">
+                        <div class="col-12 col-sm-3">
+                          <form>
                           <input type="text" placeholder="Weekly Compensation.." id="Compensation"/>
+                          </form>
                         </div> 
                     </div>
                     <button type="button" class="btn btn-light" id="btn">Submit</button>
