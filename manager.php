@@ -143,13 +143,8 @@ if($qry2 == false)
                   <div class="card-body">
                                 <div class = "user">
                                     <div class ="row">
-<<<<<<< HEAD:manager.html
                                         <div class ="col-12 col-sm-3">
                                             <span id="details"><input type ="text" id="name" placeholder="Name"/></span>
-=======
-                                        <div class ="col sm-3">
-                                            <span id="details"><input type="text" id="name" placeholder="name"/></span>
->>>>>>> 308727b851571dcb0b75181f6657535d803c8fa9:manager.php
                                         </div>
                                         <div class="col-12 col-sm-3">
                                             <img alt="handicraft" src="./pics/han1.jpg" id="han"/>
