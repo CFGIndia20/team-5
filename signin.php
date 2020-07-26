@@ -49,15 +49,21 @@ require "dbconn.php";
               <input name="pno" type="Number" class="form-control" id="exampleInputNumber1" placeholder="Enter Number">
             </div><br>
             <div>
-            <button name="submit" type="submit" class="btn btn-light" id="btn">Submit</button></div>
+            <button name="submit" type="submit" class="btn btn-light" id="btn" onclick =goToNewPage()>Submit</button></div>
           </form>
-
-
-
-
     </body>
-    </html>
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+     function goToNewPage(){
+      var url = './signin.php';
+        window.location = url;
+     }
 
+    </script>
+    </html>
+    
     
 
 <?php
