@@ -1,5 +1,10 @@
-Join the whatsapp group using this link
--https://chat.whatsapp.com/KmGmABMgPdbLXYYnQsvuE0
+# Problem Statement - 
+### A UI/UX Model to integrate and form an online platform for 
+## Getting Started
+## Coding Style
+## Built With
+## Versioning
+## Authors and Acknowledgement
 
 
 Hi Guys,
