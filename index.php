@@ -3,7 +3,7 @@
 //session_unset();
 session_start();
 
-require "dbconn.php";
+require "dbcon.php";
 
 ?>
 

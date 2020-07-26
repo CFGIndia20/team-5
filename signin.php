@@ -3,7 +3,7 @@
 session_unset();
 session_start();
 
-require "dbconn.php";
+require "dbcon.php";
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +14,7 @@ require "dbconn.php";
     
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link href="style.css" rel = "stylesheet">
+    <link href="styles/style.css" rel = "stylesheet">
          <title>Sign Up Page</title>
     </head>
     <body>
