@@ -227,34 +227,24 @@ if($qry2 == false)
                   <div class="card-header" id="headingThree">
                     <h2 class="mb-0">
                       <button class="btn btn-light collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        COMPENSATION
+                        TRACKING
                       </button>
                     </h2>
                   </div>
                   <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                     <div class="card-body">
                       <div class="row">
-                        <div class="col-12 col-sm-3">
-                          <input type="text" placeholder="Username.." id="Username"/>
+                        
+                      <div class="col-12 col-sm-3">
+                          <span>Progress Bar:</span>
                         </div>
                         <div class="col-12 col-sm-3">
-                          <input type="text" placeholder="Sessions.." id="Sessions"/>
-                        </div>
+                          <span>Name :</span>
                         <div class="col-12 col-sm-3">
-                          <form>
-                          <input type="text" placeholder="Productive hours.." id="Productive"/>
-                          </form>
+                          <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
                         </div>
-                        <div class="col-12 col-sm-3">
-                          <form>
-                          <input type="text" placeholder="Weekly Compensation.." id="Compensation"/>
-                          </form>
-                        </div> 
-                    </div>
-                    <button type="button" class="btn btn-light" id="btn">Submit</button>
-                    </div>
-                  </div>
-                </div>
               </div>
      
 
