@@ -1,3 +1,12 @@
+<?php
+session_start();
+include('dbcon.php');
+$qry = "SELECT * from learning where uid=2";
+$run = mysqli_query($con,$qry);
+$data = mysqli_fetch_assoc($run);
+$hwname = $data["l_task"];
+$id = $data["uid"];//$_SESSION
+?>
 <!DOCTYPE HTML>
 <html lang="en">
 
@@ -81,6 +90,7 @@
 				 					<a href="javascript:void(0);" class="stp-icn stp-1"><img src="https://thestoriesofchange.com/wp-content/uploads/2019/09/jagruti5-375x195.png" alt=""/></a>
 				 					<div class="step-des">
 				 						<h3>HOMEWORK</h3>
+                                        <h4><?php echo $hwname; ?></h4>
 				 					</div>
 				 				</div>
 				 			</div>
@@ -92,20 +102,25 @@
 				 						<p> <input type="textarea" size="30"><br /></p>
 				 						<br>
 				 						<button>Submit</button>
+                                        
 				 					</div>
 				 				</div>
 				 			</div>
+                               
 				 			<div class="col-lg-4 col-sm-4" style="border: #A01F62 5px solid">
 				 				<div class="steps-bx">
 				 					<a href="javascript:void(0);" class="stp-icn stp-3"><img src="cash-icn.png" alt=""/></a>
 				 					<div class="step-des">
+                                         <form method="post" enctype="multipart/form-data">
 				 						<h3>Upload</h3>
 				 						<p><input type="file" name="fileToUpload" id="fileToUpload"></p>
 				 						<br>
-				 						<button>Upload</button>
+				 						<button type="submit" name="upload">Upload</button>
+                                             </form>
 				 					</div>
 				 				</div>
 				 			</div>
+                                    
 				 		</div>
 				 		</div>
 				 		
@@ -138,7 +153,7 @@
   <option value="DIYA">Diya</option>
   <option value="BAG">Bags</option>
   <option value="POTS">Pots</option>
-</select></option>
+</select>
 		 			<br>
 		 			<br>
 		 			<br>
@@ -264,3 +279,25 @@ function onScroll(event){
 	</body>
 
 </html>
+<?php
+if(isset($_POST["upload"]))
+{
+    if(is_uploaded_file($_FILES['fileToUpload']['tmp_name']))
+    {
+        $imgdata = addslashes(file_get_contents($_FILES['fileToUpload']['tmp_name'])); 
+        $sql = "UPDATE `learning` SET `hw`='$imgdata' WHERE uid='$id' ";
+        $run = mysqli_query($con,$sql);
+        if($run == true)
+        {
+            
+          echo "uploaded";
+        }
+        else
+        {
+            echo"error";
+        }
+    }
+   
+    
+}
+?>
